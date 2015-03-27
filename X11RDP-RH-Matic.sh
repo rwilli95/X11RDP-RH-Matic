@@ -173,7 +173,8 @@ fetch()
 	if [ ! -f ${SOURCE_DIR}/${DISTFILE} ]; then
 		wget \
 			--quiet \
-			--output-document=${SOURCE_DIR}/${DISTFILE} \
+			--content-disposition \
+			--directory-prefix=${SOURCE_DIR} \
 			https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_COMMIT} && \
 		echo 'done'
 	else
