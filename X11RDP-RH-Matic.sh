@@ -416,7 +416,7 @@ first_of_all()
 	# first of all, check if yum-utils installed
 	echo 'First of all, checking for necessary programs to run this script... '
 	echo -n 'Checking for yum-utils... '
-	if hash repoquery 2> /dev/null; then
+	if hash sudo repoquery 2> /dev/null; then
 		echo 'yes'
 	else
 		echo 'no'

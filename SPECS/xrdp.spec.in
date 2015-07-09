@@ -115,20 +115,42 @@ rm -rf %{buildroot}
 %doc COPYING *.txt
 %dir %{_libdir}/xrdp
 %dir %{_sysconfdir}/xrdp
+%dir %{_sysconfdir}/xrdp/pulse
 %dir %{_datadir}/xrdp
 %config(noreplace) %{_sysconfdir}/xrdp/sesman.ini
 %config(noreplace) %{_sysconfdir}/xrdp/xrdp.ini
 %config(noreplace) %{_sysconfdir}/pam.d/xrdp-sesman
 %config(noreplace) %{_sysconfdir}/logrotate.d/xrdp
 %config(noreplace) %{_sysconfdir}/sysconfig/xrdp
-%{_mandir}/man1/*
-%{_mandir}/man5/*
-%{_mandir}/man8/*
+%{_sysconfdir}/xrdp/km-*.ini
+%{_sysconfdir}/xrdp/pulse/default.pa
+%{_sysconfdir}/xrdp/startwm.sh
+%{_sysconfdir}/xrdp/xrdp.sh
+%{_sysconfdir}/xrdp/xrdp_keyboard.ini
+%{_usr}/lib/systemd/system/xrdp.service
+%{_usr}/lib/systemd/system/xrdp-sesman.service
+%{_datadir}/xrdp/ad24b.bmp
+%{_datadir}/xrdp/ad256.bmp
+%{_datadir}/xrdp/cursor0.cur
+%{_datadir}/xrdp/cursor1.cur
+%{_datadir}/xrdp/sans-10.fv1
+%{_datadir}/xrdp/xrdp24b.bmp
+%{_datadir}/xrdp/xrdp256.bmp
+%{_datadir}/xrdp/xrdp_logo.bmp
+%{_mandir}/man1/xrdp-dis.1.gz
+%{_mandir}/man5/sesman.ini.5.gz
+%{_mandir}/man5/xrdp.ini.5.gz
+%{_mandir}/man8/xrdp-chansrv.8.gz
+%{_mandir}/man8/xrdp-genkeymap.8.gz
+%{_mandir}/man8/xrdp-keygen.8.gz
+%{_mandir}/man8/xrdp-sesadmin.8.gz
+%{_mandir}/man8/xrdp-sesman.8.gz
+%{_mandir}/man8/xrdp-sesrun.8.gz
+%{_mandir}/man8/xrdp-sessvc.8.gz
+%{_mandir}/man8/xrdp.8.gz
 %{_libdir}/xrdp/*
-%{_datadir}/*
 %{_sbindir}/*
 %{_bindir}/*
-%{_sysconfdir}/*
 %{_initrddir}
 %if 0%{?with_systemd}
 %{_unitdir}/xrdp-sesman.service
